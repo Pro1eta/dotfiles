@@ -1,0 +1,52 @@
+# Stow-managed dotfiles: home/ -> $HOME, system/ -> /etc
+# Only stow package contents and repo-level metadata (e.g. .stowrc) are committed.
+
+# Local-only reference material (planning docs, external repo clones)
+docs/
+examples/
+
+# Secrets / credentials - never commit
+# SSH private keys (public keys kept)
+**/.ssh/id_*
+!**/.ssh/id_*.pub
+**/.ssh/*_key
+# Certificates / private keys
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
+# GPG private key material
+**/.gnupg/private-keys-v1.d/
+**/.gnupg/secring.gpg*
+# Plaintext passwords / tokens
+**/.netrc
+**/.authinfo
+**/.git-credentials
+**/.msmtprc
+# Env files (templates kept)
+**/.env
+**/.env.*
+!**/.env.example
+!**/.env.sample
+!**/.env.template
+
+# Shell / tool runtime state
+**/.zsh_history
+**/.zsh_history.*
+**/.bash_history
+**/.python_history
+**/.lesshst
+**/.wget-hsts
+**/.zcompdump*
+
+# Editor / OS junk
+.DS_Store
+Thumbs.db
+.directory
+*~
+*.swp
+*.swo
+*.bak
+*.orig
+*.rej
+*.tmp
